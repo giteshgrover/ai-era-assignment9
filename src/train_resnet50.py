@@ -53,7 +53,7 @@ def create_data_loaders(train_data_dir, test_data_dir):
     train_dataset = datasets.ImageFolder(train_data_dir, transform=train_transformation)
     test_dataset = datasets.ImageFolder(test_data_dir, transform=test_transform)
     
-    is_training_locally = True
+    is_training_locally = False
     # Create data loader
     if is_training_locally:
         # Create a small subset for local training
