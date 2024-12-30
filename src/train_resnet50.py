@@ -95,12 +95,13 @@ def create_data_loaders(train_data_dir, test_data_dir):
     return train_loader,test_loader
 
 def train_and_test_model():
-    print(f"Config {Config}")
+    print(f"Device {Config.device}")
 
     print("[STEP 1] Preparing datasets...")
     # Download latest version
-    # path = kagglehub.dataset_download("ifigotin/imagenetmini-1000")
-    path = "/Users/gitesh.grover/.cache/kagglehub/datasets/ifigotin/imagenetmini-1000/versions/1/imagenet-mini"
+    path = kagglehub.dataset_download("ifigotin/imagenetmini-1000")
+    path += "/imagenet-mini"
+    # path = "/Users/gitesh.grover/.cache/kagglehub/datasets/ifigotin/imagenetmini-1000/versions/1/imagenet-mini"
     print("Path to dataset files:", path)
     train_dir = os.path.join(path, 'train')
     test_dir = os.path.join(path, 'val') 
